@@ -1,22 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Task Manager</title>
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
     <div class="container">
-        <!-- Header for application name -->
-        <header>
-            <h1>Task Manager</h1>
-        </header>
+      <!-- Header for application name -->
+      <header>
+        <h1>Task Manager</h1>
+      </header>
 
-        <section class="task-form">
-            <input type="text" id="taskName" placeholder="Enter Task Name">
-            <textarea id="taskDesc" placeholder="Enter Task Description"></textarea>
-            <button id="addTaskBtn">Add Task</button>
-        </section>
+      <!-- Section with input fields and button to add new task -->
+      <section class="task-form">
+        <input type="text" id="taskName" placeholder="Enter Task Name" />
+        <textarea id="taskDesc" placeholder="Enter Task Description"></textarea>
+        <button id="addTaskBtn">Add Task</button>
+      </section>
+
+      <!-- Section with filtering buttons -->
+      <section class="filters">
+        <button id="filterAll">All</button>
+        <button id="filterPending">Pending</button>
+        <button id="filterCompleted">Completed</button>
+      </section>
     </div>
-</body>
+  </body>
 </html>

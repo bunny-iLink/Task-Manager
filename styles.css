@@ -1,0 +1,27 @@
+/* Import font to be used */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    background: #121212;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Apply font to each and every element explicitly */
+body, h1, h2, h3, p, button, input, textarea {
+    font-family: 'Fira Code', monospace;
+}
+
+
+
