@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     ${task.name} : ${task.description}
                 </span>
                 <button class="complete">${
-                  task.completed ? "Undo" : "✔"
+                  task.completed ? "Undo" : "✅"
                 }</button>
                 <button class="edit">✏️</button>
                 <button class="delete">❌</button>
