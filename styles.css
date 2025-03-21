@@ -44,4 +44,38 @@ header {
     border-bottom: 2px solid #00ffaa;
 }
 
+/* Tassk Form styles - input forms and add task button */
+.task-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
 
+/* Input and textarea styles */
+.task-form input, .task-form textarea {
+    background: #333;
+    color: #fff;
+    border: 1px solid #00ffaa;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    outline: none;
+    transition: 0.3s;
+}
+
+/* Glowing border for input fields */
+.task-form input:focus, .task-form textarea:focus {
+    box-shadow: 0 0 10px rgba(0, 255, 170, 0.8);
+}
+
+/* Add taask button styles */
+.task-form button {
+    background: #00ffaa;
+    color: #121212;
+    font-weight: bold;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
