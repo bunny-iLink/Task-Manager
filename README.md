@@ -44,3 +44,7 @@ cd Task-Manager
 - **Step 3:** Open the `index.html` file in your preferred web browser
 
 -----------------------------
+
+### Cannot run locally? Want to access the application online?
+
+- Access the application hosted using GitHub Pages [here](https://bunny-ilink.github.io/Task-Manager/)
