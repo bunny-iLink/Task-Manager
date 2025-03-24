@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const li = document.createElement("li");
       li.innerHTML = `
                 <span class="${task.completed ? "completed" : ""}">
-                    ${task.name} : ${task.description}
+                    <strong>${task.name}</strong> : ${task.description}
                 </span>
                 <button class="complete">${
                   task.completed ? "Undo" : "✅"

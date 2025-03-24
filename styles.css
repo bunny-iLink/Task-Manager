@@ -107,6 +107,7 @@ header {
   border-radius: 5px;
   font-weight: bold;
   transition: 0.3s;
+  font-size: medium;
 }
 
 /* Filter buttons on hover styles*/
