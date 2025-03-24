@@ -17,7 +17,7 @@
 
 ## A glimpse of the application
 
-
+![image](https://github.com/bunny-iLink/Task-Manager/blob/main/Screenshot%20from%202025-03-24%2017-55-58.png)
 
 ----------------------------
 
