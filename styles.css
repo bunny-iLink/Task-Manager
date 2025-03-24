@@ -116,6 +116,11 @@ header {
   color: #121212;
 }
 
+.filters button.active {
+  background: #00ffaa;
+  color: #121212;
+}
+
 /* Styles for task list */
 .task-list ul {
   list-style: none;

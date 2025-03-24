@@ -1,49 +1,58 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const taskName = document.getElementById("taskName"); // Get task name input by ID
-  const taskDescription = document.getElementById("taskDesc"); // Get task description input by ID
-  const addTaskBtn = document.getElementById("addTaskBtn"); // Get add task button by ID
-  const taskContainer = document.getElementById("taskContainer"); // Get task container by ID, will be used to add tasks dynamically
+  const taskName = document.getElementById("taskName");
+  const taskDescription = document.getElementById("taskDesc");
+  const addTaskBtn = document.getElementById("addTaskBtn");
+  const taskContainer = document.getElementById("taskContainer");
 
-  let tasks = JSON.parse(localStorage.getItem("tasks")) || []; // Retrieve tasks array from local storage, or create a new array if it doesn't exist
+  const filterButtons = document.querySelectorAll(".filters button");
+  let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
   function renderTasks(filter = "all") {
-    taskContainer.innerHTML = ""; // Clear task container
+    taskContainer.innerHTML = "";
 
     tasks.forEach((task, index) => {
-      if (filter == "completed" && !task.completed) return; // If filter is "completed", only show completed tasks
-      if (filter == "pending" && task.completed) return; // If filter is "pending", only show pending tasks
+      if (filter === "completed" && !task.completed) return;
+      if (filter === "pending" && task.completed) return;
 
       const li = document.createElement("li");
       li.innerHTML = `
-                <span class="${task.completed ? "completed" : ""}">
-                    <strong>${task.name}</strong> : ${task.description}
-                </span>
-                <button class="complete">${
-                  task.completed ? "Undo" : "✅"
-                }</button>
-                <button class="edit">✏️</button>
-                <button class="delete">❌</button>
-            `;
+              <span class="${task.completed ? "completed" : ""}">
+                  <strong>${task.name}</strong> : ${task.description}
+              </span>
+              <button class="complete">${
+                task.completed ? "Undo" : "✅"
+              }</button>
+              <button class="edit">✏️</button>
+              <button class="delete">❌</button>
+          `;
 
-        li.querySelector(".complete").addEventListener("click", function() {
-            task.completed = !task.completed;
-            saveAndRender();
-        });
+      li.querySelector(".complete").addEventListener("click", function () {
+        task.completed = !task.completed;
+        saveAndRender();
+      });
 
-        li.querySelector(".edit").addEventListener("click", function() {
-            taskName.value = task.name;
-            taskDescription.value = task.description;
-            tasks.splice(index, 1);
-            saveAndRender();
-        });
+      li.querySelector(".edit").addEventListener("click", function () {
+        taskName.value = task.name;
+        taskDescription.value = task.description;
+        tasks.splice(index, 1);
+        saveAndRender();
+      });
 
-        li.querySelector(".delete").addEventListener("click", function() {
-            tasks.splice(index, 1);
-            saveAndRender();
-        });
+      li.querySelector(".delete").addEventListener("click", function () {
+        tasks.splice(index, 1);
+        saveAndRender();
+      });
 
-        taskContainer.appendChild(li);
+      taskContainer.appendChild(li);
     });
+
+    // Highlight the active filter button
+    filterButtons.forEach((button) => button.classList.remove("active"));
+    document
+      .getElementById(
+        `filter${filter.charAt(0).toUpperCase() + filter.slice(1)}`
+      )
+      .classList.add("active");
   }
 
   function saveAndRender() {
@@ -53,14 +62,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   addTaskBtn.addEventListener("click", function () {
     if (taskName.value.trim() === "") {
-        alert("Task name is required");
-        return;
+      alert("Task name is required");
+      return;
     }
 
     tasks.push({
-        name: taskName.value,
-        description: taskDescription.value,
-        completed: false,
+      name: taskName.value,
+      description: taskDescription.value,
+      completed: false,
     });
 
     taskName.value = "";
@@ -69,9 +78,15 @@ document.addEventListener("DOMContentLoaded", function () {
     saveAndRender();
   });
 
-  document.getElementById("filterAll").addEventListener("click", () => renderTasks("all"));
-  document.getElementById("filterPending").addEventListener("click", () => renderTasks("pending"));
-  document.getElementById("filterCompleted").addEventListener("click", () => renderTasks("completed"));
+  document
+    .getElementById("filterAll")
+    .addEventListener("click", () => renderTasks("all"));
+  document
+    .getElementById("filterPending")
+    .addEventListener("click", () => renderTasks("pending"));
+  document
+    .getElementById("filterCompleted")
+    .addEventListener("click", () => renderTasks("completed"));
 
   renderTasks();
 });

@@ -2,7 +2,45 @@
 
 ## Task Management application to implement the learnings of JavaScript session by **Cynthia. S**
 
-- **Task-Manager** is a simple task management application that allows users to add, delete, and edit and keep track of the tasks they have to complete.
-  - The application is built using JavaScript, HTML, and CSS.
+- **Task-Manager** - a simple yet efficient Task Manager application built using HTML, CSS, and JavaScript. This app allows users to add, edit, delete, and mark tasks as complete, helping them stay organized.
 
-**The application is hosted using GitHub Pages and can be accessed [here](https://bunny-ilink.github.io/Task-Manager/)**
+---------------------------
+
+## Features
+✅ Add new tasks    
+✅ Edit existing tasks    
+✅ Mark tasks as completed    
+✅ Delete tasks    
+✅ User-friendly and responsive UI    
+
+----------------------------
+
+## A glimpse of the application
+
+
+
+----------------------------
+
+## Technologies Used
+
+- **HTML** – Structure of the application
+- **CSS** – Styling and layout
+- **JavaScript** – Functionality and interactions
+
+-----------------------------
+
+## How to use???
+
+- **Step 1:** Clone the repository to your local machine
+```
+git clone https://github.com/bunny-iLink/Task-Manager.git
+```
+
+- **Step 2:** Navigate to the project directory
+```
+cd Task-Manager
+```
+
+- **Step 3:** Open the `index.html` file in your preferred web browser
+
+-----------------------------
