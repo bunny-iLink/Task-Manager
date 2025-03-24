@@ -143,6 +143,12 @@ header {
 .task-list li span {
   flex: 1;
   font-size: 16px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  max-width: 100%; /* Prevents text from exceeding container width */
+  max-height: 80px; /* Ensures the list item does not grow too much */
+  overflow-y: auto; /* Adds a scrollbar if text overflows */
 }
 
 /* Styles for completed task - croos-out */
@@ -171,7 +177,7 @@ header {
 
 /* Hover effect for complete */
 .complete:hover {
-    background: #066847;
+  background: #066847;
 }
 
 /* Style for edit button */
@@ -210,5 +216,31 @@ header {
   to {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .task-list li span {
+    font-size: 14px;
+    max-height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .task-list li {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .task-list li span {
+    font-size: 14px;
+    max-height: 50px;
+    width: 100%;
+  }
+
+  .task-list button {
+    padding: 5px 10px;
+    font-size: 14px;
   }
 }
